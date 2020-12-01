@@ -1,0 +1,16 @@
+HTTP/1.1 302 Found
+Cache-Control: private, max-age=10
+Content-Type: text/html; charset=utf-8
+Expires: Mon, 23 Nov 2020 13:54:14 GMT
+Last-Modified: Mon, 23 Nov 2020 13:54:04 GMT
+Location: /default.aspx?page=thoikhoabieu&sta=0
+Server: Microsoft-IIS/10.0
+X-AspNet-Version: 2.0.50727
+X-Powered-By: ASP.NET
+Date: Mon, 23 Nov 2020 13:54:03 GMT
+Connection: close
+Content-Length: 164
+
+<html><head><title>Object moved</title></head><body>
+<h2>Object moved to <a href="%2fdefault.aspx%3fpage%3dthoikhoabieu%26sta%3d0">here</a>.</h2>
+</body></html>
