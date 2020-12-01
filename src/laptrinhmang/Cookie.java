@@ -105,7 +105,7 @@ public class Cookie {
         while ((inputLine = in.readLine()) != null){
             if(inputLine.contains("id=\"ctl00_Header1_Logout1_lblNguoiDung\"")){
                 String output = Cookie.splitHTML(inputLine);
-                username = output.split("/")[1];
+                username = output.split("#")[1];
             }
         }
         in.close();
@@ -125,6 +125,24 @@ public class Cookie {
         }
         in.close();
         out.close();
+    }
+    
+    public static float getAverageScore(String filename) throws IOException {
+        FileReader file = new FileReader(filename);
+        BufferedReader in = new BufferedReader(file);
+        String inputLine="";
+        float dtb = 0;
+        BufferedWriter out = new BufferedWriter(new FileWriter("score.txt"));
+        while ((inputLine = in.readLine()) != null){
+            if(inputLine.contains("Điểm trung bình tích lũy")){
+                String input = Cookie.splitHTML(inputLine);
+                System.out.println(input);
+                dtb = Float.parseFloat(input.split("#")[2].trim());
+            }
+        }
+        in.close();
+        out.close();
+        return dtb;
     }
     
     public static void getTimeTable(String filename) throws IOException {
@@ -153,9 +171,11 @@ public class Cookie {
         String content[] = input.split("[<>]");
         for (String retval: content) {
             if(retval.contains("td")
+                    ||retval.contains("/tr")
+                    ||retval.contains("/a")
                     ||retval.contains("div")
                     ||retval.contains("table")
-                    ||retval.contains("/")
+                    ||retval.contains("style")
                     ||retval.contains("height")
                     ||retval.contains("align")
                     ||retval.contains("href")
@@ -164,9 +184,9 @@ public class Cookie {
             
             retval = retval.trim();
             if(retval.equals("&nbsp;")){
-                output = output + " /";
+                output = output + " #";
             }else{
-                output = output + retval + "/";
+                output = output + retval + "#";
             }
             
         }

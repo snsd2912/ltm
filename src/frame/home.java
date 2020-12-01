@@ -89,6 +89,7 @@ public class home extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbldiem = new javax.swing.JTable();
+        dtb = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -111,7 +112,15 @@ public class home extends javax.swing.JFrame {
             new String [] {
                 "Ngày", "Môn học", "Nhóm MH", "Thứ", "Giờ bắt đầu", "Giờ kết thúc", "Số phòng"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tbl);
 
         option.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Xem cả học kì", "Tuần 01 [Từ 07/09/2020 -- Đến 13/09/2020]", "Tuần 02 [Từ 14/09/2020 -- Đến 20/09/2020]", "Tuần 03 [Từ 21/09/2020 -- Đến 27/09/2020]", "Tuần 04 [Từ 28/09/2020 -- Đến 04/10/2020]", "Tuần 05 [Từ 05/10/2020 -- Đến 11/10/2020]", "Tuần 06 [Từ 12/10/2020 -- Đến 18/10/2020]", "Tuần 07 [Từ 19/10/2020 -- Đến 25/10/2020]", "Tuần 08 [Từ 26/10/2020 -- Đến 01/11/2020]", "Tuần 09 [Từ 02/11/2020 -- Đến 08/11/2020]", "Tuần 10 [Từ 09/11/2020 -- Đến 15/11/2020]", "Tuần 11 [Từ 16/11/2020 -- Đến 22/11/2020]", "Tuần 12 [Từ 23/11/2020 -- Đến 29/11/2020]", "Tuần 13 [Từ 30/11/2020 -- Đến 06/12/2020]", "Tuần 14 [Từ 07/12/2020 -- Đến 13/12/2020]", "Tuần 15 [Từ 14/12/2020 -- Đến 20/12/2020]", "Tuần 16 [Từ 21/12/2020 -- Đến 27/12/2020]", "Tuần 17 [Từ 28/12/2020 -- Đến 03/01/2021]", "Tuần 18 [Từ 04/01/2021 -- Đến 10/01/2021]", "Tuần 19 [Từ 11/01/2021 -- Đến 17/01/2021]", "Tuần 20 [Từ 18/01/2021 -- Đến 24/01/2021]", "Tuần 21 [Từ 25/01/2021 -- Đến 31/01/2021]", "Tuần 22 [Từ 01/02/2021 -- Đến 07/02/2021]", "Tuần 23 [Từ 08/02/2021 -- Đến 14/02/2021]" }));
@@ -165,10 +174,16 @@ public class home extends javax.swing.JFrame {
             new String [] {
                 "Tên môn", "Điểm chuyên cần", "Điểm kiểm tra", "Điểm thực hành", "Điểm thi", "Điểm tổng", "Đánh giá", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16"
             }
-        ));
-        tbldiem.setColumnSelectionAllowed(true);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(tbldiem);
-        tbldiem.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         javax.swing.GroupLayout xemdLayout = new javax.swing.GroupLayout(xemd);
         xemd.setLayout(xemdLayout);
@@ -176,8 +191,11 @@ public class home extends javax.swing.JFrame {
             xemdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(xemdLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(xemdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
+                .addGroup(xemdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(xemdLayout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(dtb, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1116, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
@@ -185,7 +203,9 @@ public class home extends javax.swing.JFrame {
             xemdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(xemdLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jButton2)
+                .addGroup(xemdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(dtb))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(28, Short.MAX_VALUE))
@@ -260,11 +280,14 @@ public class home extends javax.swing.JFrame {
             dtm.setRowCount(0);
             while (myReader.hasNextLine()) {
                 String line = myReader.nextLine();
-                String col[] = line.split("/");
+                String col[] = line.split("#");
                 dtm.addRow(new Object[]{col[2],col[3],col[4],col[5],col[6],col[7],col[8],
                                         col[9],col[10],col[11],col[12],col[13],col[14],col[15],col[16],col[17]});
             }
             myReader.close();
+            
+            float diemtb = Cookie.getAverageScore("viewstate.txt");
+            dtb.setText("Điểm trung bình tích lũy (hệ 4): "+diemtb);
             
         } catch (IOException ex) {
             Logger.getLogger(home.class.getName()).log(Level.SEVERE, null, ex);
@@ -353,6 +376,7 @@ public class home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane cover;
+    private javax.swing.JLabel dtb;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;

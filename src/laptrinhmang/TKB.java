@@ -98,7 +98,7 @@ public class TKB {
         Scanner myReader = new Scanner(file);
         while (myReader.hasNextLine()) {
             String line = myReader.nextLine();
-            String fields[] = line.split("/");
+            String fields[] = line.split("#");
             
             int row = Math.round((fields.length-9)/6);
             int col = 0;
@@ -124,7 +124,7 @@ public class TKB {
                 
                 if(fields[fields.length-1-3*row+i].length()>5){
                     mh.setPhong(fields[fields.length-1-3*row+i]);
-                }else mh.setPhong(fields[fields.length-1-3*row+i-1]);
+                }else mh.setPhong(" ");
                 
                 //System.out.println(mh.toString()+"\n");
                 list.add(mh);

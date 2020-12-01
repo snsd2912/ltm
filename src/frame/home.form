@@ -144,13 +144,13 @@
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="7" rowCount="0">
-                        <Column editable="true" title="Ng&#xe0;y" type="java.lang.Object"/>
-                        <Column editable="true" title="M&#xf4;n h&#x1ecd;c" type="java.lang.Object"/>
-                        <Column editable="true" title="Nh&#xf3;m MH" type="java.lang.Object"/>
-                        <Column editable="true" title="Th&#x1ee9;" type="java.lang.Object"/>
-                        <Column editable="true" title="Gi&#x1edd; b&#x1eaf;t &#x111;&#x1ea7;u" type="java.lang.Object"/>
-                        <Column editable="true" title="Gi&#x1edd; k&#x1ebf;t th&#xfa;c" type="java.lang.Object"/>
-                        <Column editable="true" title="S&#x1ed1; ph&#xf2;ng" type="java.lang.Object"/>
+                        <Column editable="false" title="Ng&#xe0;y" type="java.lang.Object"/>
+                        <Column editable="false" title="M&#xf4;n h&#x1ecd;c" type="java.lang.Object"/>
+                        <Column editable="false" title="Nh&#xf3;m MH" type="java.lang.Object"/>
+                        <Column editable="false" title="Th&#x1ee9;" type="java.lang.Object"/>
+                        <Column editable="false" title="Gi&#x1edd; b&#x1eaf;t &#x111;&#x1ea7;u" type="java.lang.Object"/>
+                        <Column editable="false" title="Gi&#x1edd; k&#x1ebf;t th&#xfa;c" type="java.lang.Object"/>
+                        <Column editable="false" title="S&#x1ed1; ph&#xf2;ng" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -258,8 +258,12 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="dtb" min="-2" pref="277" max="-2" attributes="0"/>
+                          </Group>
                           <Component id="jScrollPane2" min="-2" pref="1116" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="42" max="32767" attributes="0"/>
@@ -270,7 +274,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dtb" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="458" max="-2" attributes="0"/>
                       <EmptySpace pref="28" max="32767" attributes="0"/>
@@ -298,26 +305,26 @@
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="16" rowCount="0">
-                        <Column editable="true" title="T&#xea;n m&#xf4;n" type="java.lang.Object"/>
-                        <Column editable="true" title="&#x110;i&#x1ec3;m chuy&#xea;n c&#x1ea7;n" type="java.lang.Object"/>
-                        <Column editable="true" title="&#x110;i&#x1ec3;m ki&#x1ec3;m tra" type="java.lang.Object"/>
-                        <Column editable="true" title="&#x110;i&#x1ec3;m th&#x1ef1;c h&#xe0;nh" type="java.lang.Object"/>
-                        <Column editable="true" title="&#x110;i&#x1ec3;m thi" type="java.lang.Object"/>
-                        <Column editable="true" title="&#x110;i&#x1ec3;m t&#x1ed5;ng" type="java.lang.Object"/>
-                        <Column editable="true" title="&#x110;&#xe1;nh gi&#xe1;" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 8" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 9" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 10" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 11" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 12" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 13" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 14" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 15" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 16" type="java.lang.Object"/>
+                        <Column editable="false" title="T&#xea;n m&#xf4;n" type="java.lang.Object"/>
+                        <Column editable="false" title="&#x110;i&#x1ec3;m chuy&#xea;n c&#x1ea7;n" type="java.lang.Object"/>
+                        <Column editable="false" title="&#x110;i&#x1ec3;m ki&#x1ec3;m tra" type="java.lang.Object"/>
+                        <Column editable="false" title="&#x110;i&#x1ec3;m th&#x1ef1;c h&#xe0;nh" type="java.lang.Object"/>
+                        <Column editable="false" title="&#x110;i&#x1ec3;m thi" type="java.lang.Object"/>
+                        <Column editable="false" title="&#x110;i&#x1ec3;m t&#x1ed5;ng" type="java.lang.Object"/>
+                        <Column editable="false" title="&#x110;&#xe1;nh gi&#xe1;" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 8" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 9" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 10" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 11" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 12" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 13" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 14" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 15" type="java.lang.Object"/>
+                        <Column editable="false" title="Title 16" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                      <TableColumnModel selectionModel="1">
+                      <TableColumnModel selectionModel="0">
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>
@@ -400,7 +407,6 @@
                         </Column>
                       </TableColumnModel>
                     </Property>
-                    <Property name="columnSelectionAllowed" type="boolean" value="true"/>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
@@ -408,6 +414,8 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JLabel" name="dtb">
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
